@@ -6,6 +6,7 @@ body{
 }
 
 
+
 html{
 background-color: black;
     background-image: url(src/1fondo_metro_trans79.png);
@@ -35,7 +36,8 @@ p{
     width: 177svh;
     transform: translate(-50%, -50%);
     z-index: -10;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container{
