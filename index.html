@@ -85,8 +85,24 @@ const moveCursor = (e)=> {
 }
 
 var audio = document.getElementById("audio")
+var playing = false
+
 function playAudio() {
-  audio.play()
+    if (playing){
+        playing = false
+        audio.pause();
+        audio.currentTime = 0;
+    }
+    else{
+        playing = true
+        audio.play()
+    }
+  
+  
+}
+
+function stopAudio() {
+  audio.stop()
 }
 
 window.addEventListener('mousemove', moveCursor)
