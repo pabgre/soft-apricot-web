@@ -11,7 +11,7 @@ background-color: black;
     background-image: url(src/1fondo_metro_trans79.png);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 80vh;
+    min-height: 100svh;
     background-position: center;
     margin: 0;
     padding: 0;
