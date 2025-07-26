@@ -63,6 +63,14 @@ p{
 }
 
 
+.parallax-layer.tres img{
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 20vh);
+}
+
 .parallax-layer.tres #img{
     transform: translate(-5%, 0%);
 }

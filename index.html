@@ -25,7 +25,8 @@
             <img src="src/2textura_papel_trans36.png" alt="">
         </div>
         <div class="parallax-layer tres" value="1" >
-            <div id="img"></div>
+            <div class="d-md-block d-none" id="img"></div>
+            <img class="d-md-none d-block" src="src/3soft_apricot_trans100.png" alt="">
         </div>
         <div class="parallax-layer cuatro" value="-6" >
             <img src="src/4luz_naranja_trans100.png" alt="">
@@ -35,11 +36,13 @@
     <div class="container pt-md-5 d-flex flex-column" style="height: 100vh;">
         <div class="d-flex justify-content-center justify-content-md-between flex-column flex-md-row pt-md-5">
             <p class="text-center listening-to">you are listening to</p>
-            <p  class="text-center">crafted between two lifes</p>
+            <p  class="d-md-none d-block text-center">crafted between two lives</p>
+            <p  class="d-md-text-center d-md-block d-none text-center">a "song" by soft apricot</p>
         </div>
         <div class="d-flex flex-column justify-content-center mt-auto mt-md-auto mb-md-auto">
             <div class="d-flex justify-content-center align-items-center mt-auto pb-2">
-                <p>a "song" by soft apricot</p>
+                <p class="d-md-none d-block text-center">a "song" by soft apricot</p>
+                <p class="d-md-text-center d-md-block d-none text-center">crafted between two lives</p>
             </div>
             <div class="d-flex justify-content-center align-items-center flex-column flex-md-row" id="hover-target">
                 <img src="src/5play_trans100.png" alt="" style="width: 80px; z-index: 10;" class="play" onclick="playAudio()"> <h1 class="mt-5 mb-5">en esta vida</h1>
