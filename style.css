@@ -35,7 +35,13 @@ p{
     width: 177svh;
     transform: translate(-50%, -50%);
     z-index: -10;
+    overflow: hidden;
 }
+
+.container{
+    overflow: hidden;
+}
+
 .cursor{
     position: relative;
     z-index: -1;
