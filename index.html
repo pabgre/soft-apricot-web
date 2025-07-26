@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>soft apricot </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+<meta name="description" content="You are listening to a 'song' by soft apricot">
+
+     <link rel="stylesheet" href="style.css"> 
+       <link rel="icon" type="image/jpg" href="favicon.jpg">
 </head>
 <body>
-    <h1>Test Website</h1>
+    <div class="cursor">
+        <img src="src/cursor.png" class="cursor">
+    </div>
+
+
+
+   
+    <div class="bg">
+        <div class="parallax-layer dos" value="-2" >
+            <img src="src/2textura_papel_trans36.png" alt="">
+        </div>
+        <div class="parallax-layer tres" value="1" >
+            <div id="img"></div>
+        </div>
+        <div class="parallax-layer cuatro" value="-6" >
+            <img src="src/4luz_naranja_trans100.png" alt="">
+        </div>
+    </div>
+
+    <div class="container pt-5 d-flex flex-column" style="height: 100vh;">
+        <div class="d-flex justify-content-center justify-content-md-between flex-column flex-md-row pt-5">
+            <p class="text-center listening-to">you are listening to</p>
+            <p  class="text-center">crafted between two lifes</p>
+        </div>
+        <div class="d-flex flex-column justify-content-center m-auto">
+            <div class="d-flex justify-content-center align-items-center mt-5 pt-5 pb-2">
+                <p>a "song" by soft apricot</p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center flex-column flex-md-row" id="hover-target">
+                <img src="src/5play_trans100.png" alt="" style="width: 80px; z-index: 10;" class="play" onclick="playAudio('src/Snippet en esta vida.wav')"> <h1 class="mt-5 mb-5">en esta vida</h1>
+ 
+        </div>
+                   </div>
+            <div class="d-flex justify-content-md-end justify-content-center">
+                <p class="ml-auto pb-5" style="font-size: 42px;"> 31.07.25</p>
+            </div>
+    </div>
+
+    
+
+    <script>
+    document.addEventListener("mousemove", parallax);
+    function parallax(event) {
+    this.querySelectorAll(".parallax-layer").forEach((shift) => {
+    const position = shift.getAttribute("value");
+    const x = (window.innerWidth - event.pageX * position) / 90;
+    const y = (window.innerHeight - event.pageY * position) / 90;
+
+    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+    }
+
+const cursorRounded = document.querySelector('.cursor');
+const moveCursor = (e)=> {
+  const mouseY = e.clientY;
+  const mouseX = e.clientX;
+
+  cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+function playAudio(url) {
+  new Audio(url).play();
+}
+
+window.addEventListener('mousemove', moveCursor)
+
+</script>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="glitch.js" async></script>
 </html>
