@@ -13,7 +13,7 @@
        <link rel="icon" type="image/jpg" href="favicon.jpg">
 </head>
 <body>
-    <div class="cursor">
+    <div class="cursor d-none d-md-block">
         <img src="src/cursor.png" class="cursor">
     </div>
 
@@ -32,29 +32,36 @@
         </div>
     </div>
 
-    <div class="container pt-5 d-flex flex-column" style="height: 100vh;">
-        <div class="d-flex justify-content-center justify-content-md-between flex-column flex-md-row pt-5">
+    <div class="container pt-md-5 d-flex flex-column" style="height: 100vh;">
+        <div class="d-flex justify-content-center justify-content-md-between flex-column flex-md-row pt-md-5">
             <p class="text-center listening-to">you are listening to</p>
             <p  class="text-center">crafted between two lifes</p>
         </div>
-        <div class="d-flex flex-column justify-content-center m-auto">
+        <div class="d-flex flex-column justify-content-center mt-auto mt-md-auto mb-md-auto">
             <div class="d-flex justify-content-center align-items-center mt-auto pb-2">
                 <p>a "song" by soft apricot</p>
             </div>
             <div class="d-flex justify-content-center align-items-center flex-column flex-md-row" id="hover-target">
-                <img src="src/5play_trans100.png" alt="" style="width: 80px; z-index: 10;" class="play" onclick="playAudio('src/Snippet en esta vida.wav')"> <h1 class="mt-5 mb-5">en esta vida</h1>
+                <img src="src/5play_trans100.png" alt="" style="width: 80px; z-index: 10;" class="play" onclick="playAudio()"> <h1 class="mt-5 mb-5">en esta vida</h1>
  
         </div>
                    </div>
-            <div class="d-flex justify-content-md-end justify-content-center">
+            <div class="d-flex justify-content-md-end justify-content-center pb-5">
                 <p class="ml-auto pb-5" style="font-size: 42px;"> 31.07.25</p>
             </div>
     </div>
 
     
-
+    <audio id="audio" style="display: hidden;">
+        <source src="src/Snippet en esta vida.wav" type="audio/wav">
+    </audio>
     <script>
-    document.addEventListener("mousemove", parallax);
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+document.addEventListener("mousemove", parallax);
     function parallax(event) {
     this.querySelectorAll(".parallax-layer").forEach((shift) => {
     const position = shift.getAttribute("value");
@@ -72,8 +79,10 @@ const moveCursor = (e)=> {
 
   cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 }
-function playAudio(url) {
-  new Audio(url).play();
+
+var audio = document.getElementById("audio")
+function playAudio() {
+  audio.play()
 }
 
 window.addEventListener('mousemove', moveCursor)
